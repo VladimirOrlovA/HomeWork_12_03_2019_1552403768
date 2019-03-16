@@ -96,22 +96,22 @@ void Task2()
 
 	int countW = 0;
 
-	
+	// ищем слова начинающиес€ с заданного символа во всех строках
 	for (int i = 0; i < count; i++)
 	{
+		// провер€ем первое слово в строках
 		if (str[i][0] == c)
 			countW++;
 		
+		// провер€ем все слова в строке, кроме первого слова
 		for (int j = 0; j < strlen(str[i]); j++)
 		{
 			
-			if (str[i][j] == ' ' &&  str[i][j + 1] == c && j!=0)
+			if (str[i][j] == ' ' &&  str[i][j + 1] == c && j != 0)
 				countW++;
 		}
 	}
 
-
-	cout << " ол-во строк - > " << count << endl;
 	cout << " ол-во слов с символа " << c <<" -> "<< countW << endl;
 
 	//cout << amountWordsBeginSembol(*str, c, count);
