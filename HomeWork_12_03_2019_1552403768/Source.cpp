@@ -50,6 +50,25 @@ void Task1()
 	fout << "Длина самой длинной строки в файле DataSource.txt -> " << max << " знаков" << endl;
 }
 
+
+int amountWordsBeginSembol(char *str, char c, int count)
+{
+	int k = 0;
+	
+	// ищем заданый символ в первом слове строки
+	if (str[0] == c)
+		k++;
+
+	for (int i = 0; i < strlen(str); i++)
+	{
+		if (str[i] == ' ' &&  str[i + 1] == c)
+			k++;
+	}
+	
+	return k;
+}
+
+
 void Task2()
 {
 	/* Дан текстовый файл. Подсчитать количество слов, начинающихся с символа, который задаёт пользователь. */
@@ -58,8 +77,44 @@ void Task2()
 	cout << "\n--------------------------------------------------------------------------\n\nTask2\n\n";
 	SetConsoleTextAttribute(hConsole, 7);
 
+	cout << "Введите первый символ слова -> ";
+	char c=' ';
+	cin >> c;
 	
+	
+	ifstream fin ("DataSource.txt");
 
+	char str[50][150];
+	int count(0);
+
+	while (!fin.eof())
+	{
+		fin.getline(str[count], 150);		//// считываем из файла "DataSource.txt" строки до конца файла и записываем строки в массив по порядку
+		count++;
+	}
+
+
+	int countW = 0;
+
+	
+	for (int i = 0; i < count; i++)
+	{
+		if (str[i][0] == c)
+			countW++;
+		
+		for (int j = 0; j < strlen(str[i]); j++)
+		{
+			
+			if (str[i][j] == ' ' &&  str[i][j + 1] == c && j!=0)
+				countW++;
+		}
+	}
+
+
+	cout << "Кол-во строк - > " << count << endl;
+	cout << "Кол-во слов с символа " << c <<" -> "<< countW << endl;
+
+	//cout << amountWordsBeginSembol(*str, c, count);
 
 }
 
