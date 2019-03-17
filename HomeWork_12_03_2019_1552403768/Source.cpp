@@ -21,7 +21,7 @@ void Task1()
 	cout << "\n--------------------------------------------------------------------------\n\nTask1\n\n";
 	SetConsoleTextAttribute(hConsole, 7);
 
-	ifstream fin("DataSource.txt");
+	ifstream fin("DataSource1.txt");
 	ofstream fout("OutTask1.txt");
 
 	char str[50][300];					// объявляем массив из 50 строк с 300 символами
@@ -46,26 +46,8 @@ void Task1()
 
 	}
 
-	cout << "Длина самой длинной строки в файле DataSource.txt -> " << max << " знаков" << endl;
-	fout << "Длина самой длинной строки в файле DataSource.txt -> " << max << " знаков" << endl;
-}
-
-
-int amountWordsBeginSembol(char *str, char c, int count)
-{
-	int k = 0;
-	
-	// ищем заданый символ в первом слове строки
-	if (str[0] == c)
-		k++;
-
-	for (int i = 0; i < strlen(str); i++)
-	{
-		if (str[i] == ' ' &&  str[i + 1] == c)
-			k++;
-	}
-	
-	return k;
+	cout << "Task 1 -Длина самой длинной строки в файле DataSource1.txt -> " << max << " знаков" << endl;
+	fout << "\nTask 1 - Длина самой длинной строки в файле DataSource1.txt -> " << max << " знаков" << endl;
 }
 
 
@@ -82,7 +64,8 @@ void Task2()
 	cin >> c;
 	
 	
-	ifstream fin ("DataSource.txt");
+	ifstream fin ("DataSource2.txt");
+	ofstream fout("OutTask2.txt");
 
 	char str[50][150];
 	int count(0);
@@ -112,9 +95,8 @@ void Task2()
 		}
 	}
 
-	cout << "Кол-во слов с символа " << c <<" -> "<< countW << endl;
-
-	//cout << amountWordsBeginSembol(*str, c, count);
+	cout << "Task 2 - Кол-во слов с символа " << c <<" в файле DataSource2.txt -> "<< countW << endl;
+	fout << "\nTask 2 - Кол-во слов с символа " << c << " в файле DataSource2.txt -> " << countW << endl;
 
 }
 
@@ -127,9 +109,52 @@ void Task3()
 	cout << "\n--------------------------------------------------------------------------\n\nTask3\n\n";
 	SetConsoleTextAttribute(hConsole, 7);
 
+	char str;
+
+	ifstream fin("DataSource3.txt");
+	ofstream fout("OutTask3.txt");
+	
+	fout << "Исходный текст:\n";
+
+	while (fin.get(str)) 
+		fout << str;
+	fout << endl;
+
+	cout << "Task 3 part 1\n";
+	fout << "Task 3 part 1\n";
+	cout << "Change symbol 0 to 1 on file DataSource3.txt and write result in file OutTask3 \n";
+	fout << "Change symbol 0 to 1 on file DataSource3.txt and write result in file OutTask3 \n";
+
+	fin.close();
+	fin.open("DataSource3.txt");
+
+	while (fin.get(str))
+	{
+		if (str == '0') 
+			str = '1';
+		fout << str;
+	}
+	fout << endl;
+
+	
+	cout << "Task 3 part 2\n";
+	fout << "Task 3 part 2\n";
+	cout << "Change symbol 1 to 0 on file DataSource3.txt and write result in file OutTask3 \n";
+	fout << "Change symbol 1 to 0 on file DataSource3.txt and write result in file OutTask3 \n";
+
+	fin.close();
+	fin.open("DataSource3.txt");
+	
+	while (fin.get(str))
+	{
+		if (str == '1')
+			str = '0';
+		fout << str;
+	}
 
 
 }
+
 
 int main()
 {

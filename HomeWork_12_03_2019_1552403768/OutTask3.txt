@@ -1,0 +1,16 @@
+Исходный текст:
+
+My birthday on 16 july 1980 jear. 
+Today is 17 march 2019 year time 13:17.
+
+Task 3 part 1
+Change symbol 0 to 1 on file DataSource3.txt and write result in file OutTask3 
+
+My birthday on 16 july 1981 jear. 
+Today is 17 march 2119 year time 13:17.
+
+Task 3 part 2
+Change symbol 1 to 0 on file DataSource3.txt and write result in file OutTask3 
+
+My birthday on 06 july 0980 jear. 
+Today is 07 march 2009 year time 03:07.

@@ -1,0 +1,5 @@
+
+Data of file DataSource1 content data about home tasks of programming C++ on russian language
+
+In task 2 we are looking for the number of words starting with the given character
+

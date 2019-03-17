@@ -118,8 +118,12 @@
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="DataSource.txt" />
+    <Text Include="DataSource1.txt" />
+    <Text Include="DataSource2.txt" />
+    <Text Include="DataSource3.txt" />
     <Text Include="OutTask1.txt" />
+    <Text Include="OutTask2.txt" />
+    <Text Include="OutTask3.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
